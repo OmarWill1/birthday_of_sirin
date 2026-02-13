@@ -72,7 +72,7 @@ img {
     opacity: 0.5;
     z-index: 99999999;
 }
-
+/*
 .area {
     text-align: center;
     font-size: 70px;
@@ -83,6 +83,21 @@ img {
     animation: spin 2s ease-out infinite;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
+*/
+
+.area {
+    text-align: center;
+    font-size: 9vw; /* Slightly smaller than 10vw to ensure fit */
+    color: white;
+    letter-spacing: -1px; /* Less negative spacing helps it stay inside */
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: spin 2s ease-out infinite;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 
 #nae {
     text-transform: capitalize;
@@ -115,15 +130,56 @@ img {
     }
 }
 
+/*
 .type-wrap {
     font-size: 25px;
     color: white;
 }
+*/
+
+.type-wrap {
+    font-size: 1.1rem;      /* Keeps the size you liked */
+    color: white;
+    padding: 0 10px;        
+    min-height: 80px;       /* Increased height to fit 2 lines comfortably */
+    line-height: 1.4;       /* Space between the two lines */
+    display: flex;          /* The "Word" centering trick */
+    justify-content: center; 
+    align-items: center;    
+    text-align: center;     
+    width: 100%;
+}
+
+/* Also, make sure the h2 inside doesn't have its own massive margins */
+.type-wrap h2 {
+    font-size: inherit;
+    margin: 0;
+    display: inline;
+}
 
 .cake {
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-    padding-top: 250px;
+    position: relative;
+    margin-top: -10px;   /* Negative margin pulls it UP toward the text */
+    padding-top: 0;      /* Removed extra padding */
+    width: 100%;         /* Let the column handle the width */
+    text-align: center;
+}
+
+.cake img {
+    width: 65%;          /* Control the actual size of the cake here */
+    height: auto;
+}
+
+
+@media (min-width: 768px) {
+    .area {
+        font-size: 70px;
+        letter-spacing: -5px;
+    }
+    .type-wrap {
+        font-size: 25px;
+    }
+    .cake img {
+        width: 300px;    /* Specific size for desktop */
+    }
 }
